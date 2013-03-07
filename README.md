@@ -6,7 +6,7 @@ It is optimized for in-browser use.
 Using a modular script loader like JSSandBox will improve the speed and quality of your code.
 
 
-Why you need it
+Why do you need it
 =========
 * 100% isolation of modules by native iframe sandbox.
 * Absolutely no global variables, so no script can access to modules and broke them.
