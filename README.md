@@ -18,6 +18,7 @@ Why you need it
 * No external depends, work out of the box.
 * It simple, just 230 lines of non minimized code.
 * Ideal for heavy web 2.0 webpages like gmail.
+* Works fine with crossdomain & cdn like cloudflare.
 
 How it works
 ==========
@@ -26,3 +27,44 @@ See inspector on example page.
 
 How to use it
 ==========
+Add to page 
+<code><nowiki>&lt;script src="JSSandBox.js"></ script></nowiki></code>
+
+Edit JSSandBox.js
+Change if you need <code>var prefix = 'http://www.example.com/sand_box_modules_location/';</code>
+
+Open SandBoxModules/main/router.js - it is a root module, so in this module you can do routing.
+
+Internal variables
+==========
+Every module have global variables in his scopes.
+
+<code>global.require</code> - used to require aditional modules.
+
+<code>global.window</code> - reference to a global real window, so you can change what you want on real window.
+
+<code>_ready = true</code> - Sandbox will be wait for your module while this not a true.
+
+<code>exports = {}</code> - Exports of a module, can be function/string/object/ineger/undefined.
+
+
+Thats all...
+
+How to use JSSandBox require
+==========
+Lets require some module.
+in any module type
+
+<code>
+<pre>
+global.require( 
+  [
+    'main/jQuery-1.9.1',
+    'main/jQuery-1.6.3'
+  ], 
+  function( jQuery191, jQuery163 ){
+    console.log('here we have two jQueries =)',jQuery191,jQuery163);
+  }
+)
+</pre>
+</code>
