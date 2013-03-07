@@ -52,6 +52,9 @@ global.require([
 			case '#index':
 				global.require(['index_page']);
 				break;
+			case '#jquery':
+				global.require(['jquery_page']);
+				break;
 			default:
 				console.log('unknown page, load index page router');
 				global.require(['index_page']);
