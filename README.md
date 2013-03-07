@@ -53,8 +53,8 @@ Thats all...
 How to use JSSandBox require
 ==========
 Lets require some module.
-in any module type
 
+Type in any module.
 <code>
 <pre>
 global.require( 
@@ -66,5 +66,33 @@ global.require(
     console.log('here we have two jQueries =)',jQuery191,jQuery163);
   }
 )
+</pre>
+</code>
+
+How to build your module
+=========
+
+Create a folder in SandBoxModules, for example "my_module"
+
+Create a js file in SandBoxModules/my_module/module.js
+
+Type in module:
+<code>
+<pre>
+_ready = true;
+
+exports = "hello world";
+</pre>
+</code>
+
+Now you can require it from another module like this:
+<code>
+<pre>
+_ready = false;
+
+global.require(['my_module/module'], function(my_module){
+  console.log(my_module); //"hello world"
+  _ready = true;
+});
 </pre>
 </code>
